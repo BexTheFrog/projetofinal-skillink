@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skillink - Meu Perfil </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="header">
+      <div class="header-left">
+        <a href="index.html" class="logo"><img src="IMG/Logo_SkillinkHT.png" alt="Skillink"></a>
+        <button class="button-menu"><img src="IMG/menu_white_36dp.svg"></button>
+      </div>
+      <div class="header-right w3-animate-top">
+        <a href="index.html"><i class="fas fa-home"></i>Home</a>
+        <a href="sk-vaga-empresa.html"><i class="fas fa-building"></i>Vagas Empresas</a>
+        <a href="sk-vaga-freela.html"><i class="fas fa-briefcase"></i>Vagas Freelancer</a>
+        <a href="sk-perfil.html"><i class="fas fa-user"></i>Perfil</a>
+        <a href="#" id="button-login" onclick="document.getElementById('Modal-Login-Cadastro').style.display='block'"
+          class="w3-button">Acessar</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="blob-outer-container">
+      <div class="blob-inner-container">
+        <div class="blob"></div>
+      </div>
+    </div>
+
+    <div class="barra-main">
+      <div class="search-container">
+        <input type="text" placeholder="Pesquise aqui...">
+      </div>
+    </div>
+
+    <div class="main-body-profile">
+
+      <div class="menu-profile">
+        <a href="sk-minhas-vagas.html" class="button-profile-menu"><i class="fa-solid fa-bookmark fa-2x"></i></i>
+          <p>Minhas Vagas</p>
+        </a>
+        <a href="sk-perfil.html" class="button-profile-menu"><i class="fa-solid fa-circle-user fa-2x"></i></i>
+          <p>Meu Perfil</p>
+        </a>
+        <a href="sk-mensagens.html" class="button-profile-menu"><i class="fa-solid fa-envelope fa-2x"></i>
+          <p>Mensagens</p>
+        </a>
+    </div>
+
+        <div id="Perfil" class="content-profile-body-perfil">
+
+        <div class="container-perfil">
+          <div class="header-container-perfil">
+            <img class="perfil-user-photo" src="img/icon-user.jpeg">
+            <h3>Nome Usuário</h3>
+            <h4>Cargo Usuário</h4>
+          </div>
+          <div class="body-container-perfil">
+            <section>
+              <div class="section-head">
+                <h3>Dados Pessoais</h3>
+                <button type="button" onclick="saveInfoPessoais(); alterarNomeUser();">Salvar</button>
+              </div>
+              <div class="section-body">
+                <form id="DadosPessoais">
+                  <fieldset>
+                    <label for="Pnome">Nome:</label>
+                    <input type="text" id="Pnome" placeholder="Insira seu nome">
+                    <label for="Pfone">Telefone:</label>
+                    <input type="text" id="Pfone" maxlength="15" oninput="formatPhone(this)"
+                      placeholder="(XX) xxxxx-xxxx">
+                    <label for="academic-level">Nivel Academico:</label>
+                    <select name="academic-level" id="academic-level">
+                      <option value="fundamental-i">Ensino Fundamental I</option>
+                      <option value="fundamental-ii">Ensino Fundamental II</option>
+                      <option value="medio-regular">Ensino Médio Regular</option>
+                      <option value="medio-tecnico">Ensino Médio Técnico</option>
+                      <option value="tecnico">Curso Técnico</option>
+                      <option value="graduacao-bacharelado">Graduação - Bacharelado</option>
+                      <option value="graduacao-licenciatura">Graduação - Licenciatura</option>
+                      <option value="graduacao-tecnologo">Graduação - Tecnólogo</option>
+                      <option value="pos-lato-sensu">Pós-graduação Lato Sensu (Especialização, MBA)</option>
+                      <option value="mestrado">Mestrado</option>
+                      <option value="doutorado">Doutorado</option>
+                      <option value="pos-doutorado">Pós-doutorado</option>
+                      <option value="eja-medio">Educação de Jovens e Adultos - Ensino Médio</option>
+                    </select>
+                    <label for="Idade">Data de Nascimento</label>
+                    <input type="date" id="Idade" name="Idade" placeholder="(DD-MM-AAAA)">
+                    <label for="github">Perfil do GitHub:</label>
+                    <input type="text" id="github" placeholder="github.com/username" oninput="formatGitHub(this)">
+                    <label for="github">Perfil do BeHance:</label>
+                    <input type="text" id="behance" placeholder="BeHance.net/username" oninput="formatBeHance(this)">
+                  </fieldset>
+                </form>
+              </section>
+            </div>
+
+            <div class="body-container-perfil">
+            <div class="section-head">
+              <h3>Experiência Academica</h3>
+              <button type="button">Salvar</button>
+            </div>
+            <div id="containerACM" class="section-body">
+              <form>
+                <fieldset>
+                  <label for="CTO-ACM">Centro Academico</label>
+                  <input type="text" id="CTO-ACM" placeholder="Centro Academico">
+                  <label for="PRD-ACM">Periodo</label>
+                  <input type="text" id="PRD-ACM" placeholder="Periodo">
+                  <label for="Curso-ACM">Curso</label>
+                  <input type="text" id="Curso-ACM" placeholder="Curso">
+                  <label for="CTG-ACM">Formação</label>
+                  <select id="CTG-ACM" name="formacoes">
+                    <option value="tecnico">Curso Técnico</option>
+                    <option value="graduacao_bacharelado">Graduação - Bacharelado</option>
+                    <option value="graduacao_tecnologica">Graduação - Tecnológica</option>
+                    <option value="pos_graduacao">Pós-graduação</option>
+                    <option value="mestrado">Mestrado</option>
+                    <option value="doutorado">Doutorado</option>
+                    <option value="cursos_livre">Cursos Livres</option>
+                  </select>
+                </fieldset>
+              </form>
+            </div>
+            </div>
+            <button id="Add-ACM">Adicionar Experiência</button>
+            <div id="containerACMClone"> </div>
+            <div class="body-container-perfil">
+            <div class="section-head">
+              <h3>Experiência Profissional</h3>
+              <button type="button">Salvar</button>
+            </div>
+            <div id="containterEXP" class="section-body">
+                <section>
+                  <form>
+                    <fieldset>
+                      <label for="EXPcargo">Cargo</label>
+                      <input type="text" id="EXPcargo" placeholder="Cargo">
+                      <label for="EXPperiodo">Periodo</label>
+                      <input type="text" id="EXPperiodo" placeholder="Tempo">
+                      <label for="EXPempresa">Empresa</label>
+                      <input type="text" id="EXPempresa" placeholder="Nome Empresa">
+                      <label for="EXPsobre">Sobre</label>
+                      <textarea id="EXPsobre" rows="5" placeholder="Conte sobre sua experiência no cargo"></textarea>
+                    </fieldset>
+                  </form>  
+                </section>
+            </div>
+            </div>
+            <button id="Add-EXP">Adicionar Experiência</button>
+            <div id="containerEXPClone"></div> 
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+
+<div id="Modal-Login-Cadastro" class="w3-modal ">
+  <div class="w3-modal-content w3-animate-top w3-border-0">
+    <div class="Modalcontent w3-container w3-animate-top">
+      <div class="header-modal">
+        <h3>Conecte-se Conosco</h3>
+        <span onclick="document.getElementById('Modal-Login-Cadastro').style.display='none'"
+          class="exit-modal">&times;</span>
+      </div>
+      <div class="body-modal">
+
+        <div class="login">
+          <h4>LOGIN</h4>
+          <form>
+            <label for="Log-mail">E-mail:</label><br>
+            <input type="email" id="Log-mail" name="Log-mail" placeholder="E-mail">
+            <br>
+            <label for="Log-pass">Senha:</label><br>
+            <input type="password" id="Log-pass" name="Log-pass" placeholder="Senha">
+            <br>
+          </form>
+         <a href="sk-perfil.html"><button class="modal-acess-button"></a>Acesse</button></a>
+        </div>
+
+        <div class="cadastro">
+          <h4>CADASTRE-SE</h4>
+          <form>
+            <label for="Cad-nome">Nome</label><br>
+            <input type="text" id="Cad-nome" name="Cad-nome" placeholder="Nome">
+            <br>
+            <label for="Cad-mail">E-mail:</label><br>
+            <input type="email" id="Cad-mail" name="Cad-mail" placeholder="user@email.com">
+            <br>
+            <label for="Cad-pass">Senha:</label><br>
+            <input type="password" id="Cad-pass" name="Cad-pass" placeholder="Senha">
+            <br>
+            <label for="Log-mail">Confirme sua senha:</label><br>
+            <input type="password" id="Log-mail" name="Log-mail" placeholder="Confirme a sua senha">
+          </form>
+        <a href="sk-perfil.html"> <button class="modal-acess-button">Cadastre-se</button></a> 
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+  <footer>
+    <div class="footer">
+      <div class="footer-content">
+        <div class="column-footer">
+
+          <div class="icons-footer">
+            <h3>Conecte-se Conosco</h3>
+            <span><a href="#"><img class="footer-icons" src="IMG/google.png" alt="Google"></a></span>
+            <span><a href="#"><img class="footer-icons" src="IMG/instagram.png" alt="Instagram"></a></span>
+            <span><a href="#"><img class="footer-icons" src="IMG/github.png" alt="Github"></a></span>
+          </div>
+        </div>
+
+        <div class="column-footer">
+          <ol>
+            <ul>
+              <h3>Skillink</h3>
+            </ul>
+            <ul><a href="sk-sobrenos.html">Conheça a Skillink</a></ul>
+            <ul><a href="sk_pp.html" target="_blank">Politica de privacidade</a></ul>
+            <ul><a href="sk_termos.html" target="_blank">Termos de Uso</a></ul>
+          </ol>
+        </div>
+
+        <div class="column-footer">
+          <ol>
+            <ul>
+              <h3>Navegue</h3>
+            </ul>
+            <ul><a href="sk-vaga-freela.html">Vagas Freelancer</a></ul>
+            <ul><a href="sk-vaga-empresa.html">Vagas Empresas</a></ul>
+            <ul><a href="sk-perfil.html">Perfil</a></ul>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+
+      function saveInfoPessoais() {
+      
+      const nome = document.getElementById("Pnome").value.trim();
+      const telefone = document.getElementById("Pfone").value.trim();
+      const nivelAcademico = document.getElementById("academic-level").value;
+      const dataNascimento = document.getElementById("Idade").value;
+      const github = document.getElementById("github").value.trim();
+      const behance = document.getElementById("behance").value.trim();
+
+      if (!nome) {
+        alert("Por favor, insira seu nome!");
+        return;
+      }
+
+      document.getElementById("Pnome").value = nome;
+      document.getElementById("Pfone").value = telefone || "(XX) xxxxx-xxxx";
+      document.getElementById("academic-level").value = nivelAcademico;
+      document.getElementById("Idade").value = dataNascimento || "";
+      document.getElementById("github").value = github || "github.com/username";
+      document.getElementById("behance").value = behance || "Behance.net/username";
+
+      alert("Informações salvas com sucesso!");
+    }
+
+    // Função para alterar nome do usuário no header
+    function alterarNomeUser() {
+      const nomeInput = document.getElementById("Pnome").value.trim();
+      const h3Element = document.querySelector(".header-container-perfil h3");
+
+      if (h3Element) {
+        h3Element.textContent = nomeInput || "Usuário";
+      }
+    }
+
+    // Funções para formatar telefone e URLs
+    function formatPhone(input) {
+      let value = input.value.replace(/\D/g, "");
+      if (value.length > 10) {
+        input.value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7, 11)}`;
+      } else if (value.length > 5) {
+        input.value = `(${value.slice(0, 2)}) ${value.slice(2, 6)}-${value.slice(6)}`;
+      } else if (value.length > 2) {
+        input.value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
+      }
+    }
+
+    function formatGitHub(input) {
+      input.value = `github.com/${input.value.replace("github.com/", "").replace(/[^a-zA-Z0-9-_]/g, "")}`;
+    }
+
+    function formatBeHance(input) {
+      input.value = `Behance.net/${input.value.replace("Behance.net/", "").replace(/[^a-zA-Z0-9-_]/g, "")}`;
+    }
+
+    // Função para clonar divs e adicionar botão de excluir
+    function cloneDivAndAddDeleteButton(buttonId, originalDivId, cloneContainerId) {
+      const cloneButton = document.getElementById(buttonId);
+      const originalDiv = document.getElementById(originalDivId);
+      const cloneContainer = document.getElementById(cloneContainerId);
+
+      cloneButton.addEventListener('click', () => {
+        // Clonar o div original
+        const clonedDiv = originalDiv.cloneNode(true);
+        clonedDiv.classList.add('cloned');
+
+        // Criar o botão de excluir
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Excluir';
+        deleteButton.style.margin = '5px';
+        deleteButton.style.backgroundColor = '#F57955';
+        deleteButton.style.color = 'white';
+        deleteButton.style.border = 'none';
+        deleteButton.style.padding = '5px 10px';
+        deleteButton.style.cursor = 'pointer';
+        deleteButton.style.borderRadius = '15px';
+        deleteButton.style.width = '30%'
+
+        // Adicionar a funcionalidade de excluir
+        deleteButton.addEventListener('click', () => {
+          clonedDiv.remove();
+        });
+
+        
+        clonedDiv.appendChild(deleteButton);
+
+        
+        cloneContainer.appendChild(clonedDiv);
+      });
+    }
+
+
+    cloneDivAndAddDeleteButton('Add-EXP', 'containterEXP', 'containerEXPClone');
+    cloneDivAndAddDeleteButton('Add-ACM', 'containerACM', 'containerACMClone');
+
+    </script>
+  <script src="js/inter.js" ></script>
+</body>
+
+</html>
